@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: lightgray;
+}
+h1 {
+    color: darkgray;
+    margin-left: 35px;
+    text-shadow: 55px;
+    
+}
+button {
+    size: 20px;
+    border-radius: 28%;
+    background-color: red;
+    margin-left: 35px;
+}
