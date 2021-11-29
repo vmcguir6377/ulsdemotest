@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="memberlist.js"></script>
   <body>
     <header>
         <h1>
-            <page-title>Client Enrollment
+            <page-title>Client Database</page-title>
+
+           
                 <br></br>
                 <table id="table_id">
                     <thead>
                     <tr>
-                    <th class="subj_name">Client Name</th>
-                    <th>Company Name</th>
-                    <th>Company Address</th>
-                    <th>Client Email</th>
+                    <th class="subj_name">Company Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Phone</th>
+                    <th>Website</th>
                     </tr>
                     </thead>
                     <tbody></tbody>
@@ -27,55 +32,60 @@
                     charset="utf8"
                     src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"
                     ></script>
-                    <script>
-                    $(function() {
-                    $("#table_id").dataTable({
-                    aaData: [
-                    ["Bob Wire", "Heiffer Cattle Co", "Missoula, MT", "bw@yahoo.com"],
-                    ["Art Tistic", "Art's Studio", "Missoula, MT", "null"],
-                    ["Mad Hatter", "AIW Productions", "Missoula, MT", "mh@gmail.com"],
-                    ["Vince Gill", "Music Row Coffee", "Missoula, MT", "null"],
-                    ["Shelby Presley", "Big Pizza", "Missoula, MT", "null"],
-                    ["Carolann Mae", "Poltergeist Escapes", "Missoula, MT", "b@hotmail.om"],
-                    ["Dan Mann", "Prestige WW", "Missoula, MT", "null"] ],
-                    aoColumnDefs: [
-                    {
-                    sTitle: "Client Name",
-                    aTargets: ["subj_name"] },
-                    {
-                    aTargets: [3],
-                    sType: "date",
-                    mRender: function(date, type, full) {
-                    return full[1] == "70" ? new Date(date).toDateString() : "N/A";
-                    }
-                    }
-                    ] });
-                    });
-                    </script>
-        <div class="controls">
-            <button class="control_save">Submit</button>
-            <button class="control_reset" type="reset">Reset</button>
-            </div>
-            </form>
-            <script>$(".control_save").click(function () {
-                $("#client-form").saveForm();
-                return false;
-            });
-      
-            $(".control_restore").click(function () {
-                $("#demo").restoreForm();
-                return false;
-            });</script>
 
+                    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.light.css" />
+    <script src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="index.js"></script>
+  </head>
+  <body class="dx-viewport">
+    <div class="demo-container">
+      <div class="boxOptions1">
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Premier Buy	7601 Penn Avenue South	Richfield	Minnesota	(612) 291-1000	http://www.nowebsitepremierbuy.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}">ElectrixMax	263 Shuman Blvd	Naperville	Illinois	(630) 438-7800	http://www.nowebsiteelectrixmax.com </div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}">Video Emporium	1201 Elm Street	Dallas	Texas	(214) 854-3000	http://www.nowebsitevideoemporium.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}">Screen Shop	1000 Lowes Blvd	Mooresville	North Carolina	(800) 445-6937	http://www.nowebsitescreenshop.com</div>
+        
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Braeburn	1 Infinite Loop	Cupertino	California	(408) 996-1010	http://www.nowebsitebraeburn.com/div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> PriceCo	30 Hunter Lane	Camp Hill	Pennsylvania	(717) 761-2633	http://www.nowebsitepriceco.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Ultimate Gadget	1557 Watson Blvd	Warner Robbins	Georgia	(995) 623-6785	http://www.nowebsiteultimategadget.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> EZ Stop	618 Michillinda Ave.	Arcadia	California	(626) 265-8632	http://www.nowebsiteezstop.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Clicker	1100 W. Artesia Blvd.	Compton	California	(310) 884-9000	http://www.nowebsiteclicker.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Store of America	2401 Utah Ave. South	Seattle	Washington	(206) 447-1575	http://www.nowebsiteamerica.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Zone Toys	1945 S Cienega Boulevard	Los Angeles	California	(310) 237-5642	http://www.nowebsitezonetoys.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> ACME	2525 E El Segundo Blvd	El Segundo	California	(310) 536-0611	http://www.nowebsiteacme.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Dental Implants Inc.	2525 E El UNICO Blvd	El Segundoooo	California	(310) 536-0611	http://www.nowebsiteacme456.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Flowers from Heaven	25 E El Tercero Blvd	El Segundxxxxx	California	(310) 536-0611	http://www.nowebsiteacme123.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Prestige Worldwide	2525 E El UNICO Blvd	El Segundoooo	California	(310) 536-0611	http://www.nowebsiteacme456.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Tambourines Express	25 E El Tercero Blvd	El Mojave	California	(310) 536-0611	http://www.nowebsiteacme123.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Universal Remotes Inc.	27 E El Quatero Blvd	El Segundxxxxx	Florida	(310) 536-0611	http://www.nowebsiteacme567.com</div>
+        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Discount Exorcisms	25 E El Cincero Blvd	Mozambique	Arizona	(311) 536-0613	http://www.websiteacme789.com</div>
+
+
+            </div>
+      </div>
+      <br />
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
+
+                   
 
     </header>
-
-    <main class="page-content" id="page-content">
-        <section class="task-list-wrapper">
-            <ul class="task-list" id="tasks-to-do"></ul>
-            <h3 class="task-name"></h3>
-        </section>
-
     </main>
     <footer>
         &copy;2020 by McGuire Productions
