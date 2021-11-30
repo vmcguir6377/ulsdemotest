@@ -10,167 +10,252 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.1.6/js/dx.all.js"></script>
     <script src="./data.js"></script>
     <script src="./memberlist.js"></script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+   <link href="Content/font-awesome.min.css" rel="stylesheet" />    
+<link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <script src="Content/jquery.dataTables.min.js"></script>
+    <script src="Content/dataTables.bootstrap4.min.js"></script>
+    <link href="Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="Content/select.bootstrap.min.css" rel="stylesheet" />
+<script src="Content/dataTables.select.min.js"></script>
 
-    <!-- DevExtreme theme -->
-    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.dark.css">
 
-    <!-- DevExtreme library -->
-    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script>
-    <title>DevExtreme/jQuery Demo</title>
-</head>
 
-  <body class="dx-viewport">
+<style> .back{
+  background-color:#fafafa;
+}
 
-    <div class="demo-container">
-      <div id="gridContainer"></div>
-    </div>
-   
-    <div class="demo-container">
-      <div id="list"></div>
-     
-      
-          <span>🔍Search  </span>
-          <div id="searchMode"></div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="demo-container">
-      <div class="list-container">
-        <div id="simpleList"></div>
-      </div>
-    </div>
-    
-    <script>$(() => {
-      const listWidget = $('#list').dxList({
-        dataSource: products,
-        height: 400,
-        searchEnabled: true,
-        searchExpr: 'Name',
-        itemTemplate(data) {
-          return $('<div>').text(data.Name);
-        },
-      }).dxList('instance');
-      
-    
-      
-      //change this to regular search bar************************
-      $('#searchMode').dxSelectBox({
-        dataSource: ['contains', 'startswith', 'equals'],
-        value: 'contains',
-        onValueChanged(data) {
-          listWidget.option('searchMode', data.value);
-        },
-      }).dxSelectBox('instance');
-    });
-  
-    $(() => {
-      $('#simpleList').dxList({
-        dataSource: companies,
-        height: '100%',
-        grouped: true,
-        collapsibleGroups: false,
-        groupTemplate(data) {
-          return $(`<div> ${data.key}</div>`);
-        },
-      });
-    });</script>
+  </style>
 
-    <script>const companies = [{
-      key: 'Company Name',
-      items: ['Premier Buy, 123 Abc St', 'ElectrixMax', 'Video Emporium', 'Screen Shop', 'Braeburn', 'PriceCo', 'Ultimate Gadget', 'EZ Stop', 'Clicker',
-    'Store of America', 'Zone Toys', 'ACME', 'Dental Implants Inc.', 'Flowers from Algernon', 'Prestige WW', 'Tambourines Express', 'Universal Remotes',
-    'Discount Exorcisms' ],
-     
-    }];</script>
-     <script>$(() => {
-        let selectedRowIndex = -1;
+<table id="exampleData" class="table table-bordered table-hoverNA table-stripedNA dtCustom” >
+      <thead>
+          <tr class="back">
+              <th></th>
+             <th ><i data-id="sd1" class="fa fa-square-o fa-lg" aria-hidden="true" style="font-size: 16px;" onclick="javascript:Check('sd1')"></i>
+              <th><i data-id="sd2" class="fa fa-square-o fa-lg" aria-hidden="true" onclick="javascript:Check('sd2')"></i></th>
+              <th><i data-id="sd3" class="fa fa-square-o fa-lg" aria-hidden="true" onclick="javascript:Check('sd3')"></i></th>
+              <th><i data-id="sd4" class="fa fa-square-o fa-lg" aria-hidden="true" onclick="javascript:Check('sd4')"></i></th>
+              <th><i data-id="sd5" class="fa fa-square-o fa-lg" aria-hidden="true" onclick="javascript:Check('sd5')"></i></th>
+          </tr>
         
-      
-        $('#action-add').dxSpeedDialAction({
-          label: 'Add row',
-          icon: 'add',
-          index: 1,
-          onClick() {
-            grid.addRow();
-            grid.deselectAll();
-          },
-        }).dxSpeedDialAction('instance');
-      
-        const deleteSDA = $('#action-remove').dxSpeedDialAction({
-          icon: 'trash',
-          label: 'Delete row',
-          index: 2,
-          visible: false,
-          onClick() {
-            grid.deleteRow(selectedRowIndex);
-            grid.deselectAll();
-          },
-        }).dxSpeedDialAction('instance');
-      
-        const editSDA = $('#action-edit').dxSpeedDialAction({
-          label: 'Edit row',
-          icon: 'edit',
-          index: 3,
-          visible: false,
-          onClick() {
-            grid.editRow(selectedRowIndex);
-            grid.deselectAll();
-          },
-        }).dxSpeedDialAction('instance');
-      
-        const grid = $('#grid').dxDataGrid({
-          dataSource: employees,
-          showBorders: true,
-          keyExpr: 'ID',
-          selection: {
-            mode: 'single',
-          },
-          paging: {
-            enabled: false,
-          },
-          editing: {
-            mode: 'popup',
-            texts: {
-              confirmDeleteMessage: '',
-            },
-          },
-          onSelectionChanged(e) {
-            selectedRowIndex = e.component.getRowIndexByKey(e.selectedRowKeys[0]);
-      
-            deleteSDA.option('visible', selectedRowIndex !== -1);
-            editSDA.option('visible', selectedRowIndex !== -1);
-          },
-          columns: [
-            {
-              dataField: 'Prefix',
-              caption: 'Title',
-            },
-            'FirstName',
-            'LastName',
-            {
-              dataField: 'Position',
-              width: 130,
-            }, {
-              dataField: 'StateID',
-              caption: 'State',
-              width: 125,
-              lookup: {
-                dataSource: states,
-                displayExpr: 'Name',
-                valueExpr: 'ID',
-              },
-            }, {
-              dataField: 'BirthDate',
-              dataType: 'date',
-              width: 125,
-            },
-          ],
-        }).dxDataGrid('instance');
-      
-      
-      });</script>
-     
-    </div>
-  </body>
-</html>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="back"></td>
+              <td>Company Name</td>
+              <td>Address</td>
+              <td>City</td>
+              <td>State</td>
+              <td>Phone Number</td>
+              <td>Website</td>
+          </tr>
+          <tr>
+              <td class="back"></td>
+              <td>Premier Buy</td>
+              <td>7601 Penn Avenue South</td>
+              <td>Richfield</td>
+              <td>Minnesota</td>
+              <td>	(612) 291-1000</td>
+              <td>http://www.nowebsitepremierbuy.com</td>				
+          </tr>
+          <tr>
+            <td class="back"></td>
+            <td>ElectrixMax</td>
+            <td>263 Shuman Blvd</td>
+            <td>Naperville</td>
+            <td>Illinois</td>
+            <td>	(630)438-7800</td>
+            <td>http://www.nowebsiteelectrixmax.com</td>				
+        </tr>
+        <tr>
+          <td class="back"></td>
+          <td>Video Emporium</td>
+          <td>1201 Elm Street</td>
+          <td>Dallas</td>
+          <td>Texas</td>
+          <td>	(214)854-3000</td>
+          <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+      </tr>
+      <tr>
+        <td class="back"></td>
+        <td>Screen Shop</td>
+        <td>1000 Lowes Blvd</td>
+        <td>Mooresville</td>
+        <td>North Carolina</td>
+        <td>	(800)445-6937</td>
+        <td>http://www.http://www.nowebsitescreenshop.com</td>				
+    </tr>
+    <tr>
+      <td class="back"></td>
+      <td>Braeburn</td>
+      <td>1 Infinite Loop</td>
+      <td>Cupertino</td>
+      <td>California</td>
+      <td>	(408)996-1010</td>
+      <td>http://www.http://www.nowebsitebraeburn.com</td>				
+  </tr>
+  <tr>
+    <td class="back"></td>
+    <td>PriceCo</td>
+    <td>30 Hunter Lane</td>
+    <td>Camp Hill</td>
+    <td>Pennsylvania</td>
+    <td>	(717)761-2633</td>
+    <td>http://www.http://www.nowebsitepriceco.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Ultimate Gadet</td>
+  <td>1557 Watson Blvd</td>
+  <td>Warner Robbins</td>
+  <td>Georgia</td>
+  <td>	(995)623-6785</td>
+  <td>http://www.http://www.nowebsiteultimategadget.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>EZ Stop</td>
+  <td>618 Michillinda Ave.</td>
+  <td>Arcadia</td>
+  <td>California</td>
+  <td>	(626)265-8632</td>
+  <td>http://www.http://www.nowebsiteezstop.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Clicker</td>
+  <td>1100 W. Artesia Blvd</td>
+  <td>Compton</td>
+  <td>California</td>
+  <td>	(310)884-9000</td>
+  <td>http://www.http://www.nowebsiteclicker.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Store of America</td>
+  <td>2401 Utah Ave S.</td>
+  <td>Seattle</td>
+  <td>Washington</td>
+  <td>	(206)447-1575</td>
+  <td>http://www.http://www.nowebsitestoreofamerica.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+<tr>
+  <td class="back"></td>
+  <td>Video Emporium</td>
+  <td>1201 Elm Street</td>
+  <td>Dallas</td>
+  <td>Texas</td>
+  <td>	(214)854-3000</td>
+  <td>http://www.http://www.nowebsitevideoemporium.com</td>				
+</tr>
+
+          <tr>
+              <td class="back"></td>
+              <td>1</td>
+              <td>1</td>
+              <td>4</td>
+              <td>6</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td class="back"></td>
+              <td>1</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>7</td>
+          </tr>
+         </tbody></table>
+
+
+         <script>var egTable;
+          $(document).ready(function () {
+          egTable = $('#exampleData').DataTable({
+                  "bSort": false,
+                  columnDefs: [{
+                      orderable: false,
+                      className: 'select-checkbox',
+                      targets: 0
+                  }],
+                  select: {
+                      style: 'multi',
+                      selector: 'td:first-child'
+                  }
+              });
+          });
+          function Check(title) {
+              var id = title.substr(title.length - 1);
+              if ($("[data-id='" + title + "']").hasClass('fa-square-o')) {
+                  $("[data-id='" + title + "']").removeClass('fa-square-o').addClass('fa-check-square-o');
+                  egTable.columns(id).select();
+              }
+              else {
+                  $("[data-id='" + title + "']").removeClass('fa-check-square-o').addClass('fa-square-o');
+                  egTable.columns(1).deselect();
+              }
+          }</script>
