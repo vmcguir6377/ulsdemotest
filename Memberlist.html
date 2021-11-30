@@ -1,98 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="memberlist.js"></script>
-  <body>
-    <header>
-        <h1>
-            <page-title>Client Database</page-title>
-
-           
-                <br></br>
-                <table id="table_id">
-                    <thead>
-                    <tr>
-                    <th class="subj_name">Company Name</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Phone</th>
-                    <th>Website</th>
-                    </tr>
-                    </thead>
-                    <tbody></tbody>
-                    </table>
-                    <script
-                    type="text/javascript"
-                    charset="utf8"
-                    src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
-                    ></script>
-                    <script
-                    type="text/javascript"
-                    charset="utf8"
-                    src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"
-                    ></script>
-
-                    <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>DevExtreme Demo</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.light.css" />
-    <script src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="index.js"></script>
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/devextreme@21.2-next/dist/css/dx.material.orange.dark.compact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.1.6/js/dx.all.js"></script>
+    <script src="./data.js"></script>
+    <script src="./memberlist.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.dark.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script>
+    <title>DevExtreme/jQuery Demo</title>
+</head>
+
   <body class="dx-viewport">
+
     <div class="demo-container">
-      <div class="boxOptions1">
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Premier Buy	7601 Penn Avenue South	Richfield	Minnesota	(612) 291-1000	http://www.nowebsitepremierbuy.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}">ElectrixMax	263 Shuman Blvd	Naperville	Illinois	(630) 438-7800	http://www.nowebsiteelectrixmax.com </div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}">Video Emporium	1201 Elm Street	Dallas	Texas	(214) 854-3000	http://www.nowebsitevideoemporium.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}">Screen Shop	1000 Lowes Blvd	Mooresville	North Carolina	(800) 445-6937	http://www.nowebsitescreenshop.com</div>
-        
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Braeburn	1 Infinite Loop	Cupertino	California	(408) 996-1010	http://www.nowebsitebraeburn.com/div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> PriceCo	30 Hunter Lane	Camp Hill	Pennsylvania	(717) 761-2633	http://www.nowebsitepriceco.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Ultimate Gadget	1557 Watson Blvd	Warner Robbins	Georgia	(995) 623-6785	http://www.nowebsiteultimategadget.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> EZ Stop	618 Michillinda Ave.	Arcadia	California	(626) 265-8632	http://www.nowebsiteezstop.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Clicker	1100 W. Artesia Blvd.	Compton	California	(310) 884-9000	http://www.nowebsiteclicker.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Store of America	2401 Utah Ave. South	Seattle	Washington	(206) 447-1575	http://www.nowebsiteamerica.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Zone Toys	1945 S Cienega Boulevard	Los Angeles	California	(310) 237-5642	http://www.nowebsitezonetoys.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> ACME	2525 E El Segundo Blvd	El Segundo	California	(310) 536-0611	http://www.nowebsiteacme.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Dental Implants Inc.	2525 E El UNICO Blvd	El Segundoooo	California	(310) 536-0611	http://www.nowebsiteacme456.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Flowers from Heaven	25 E El Tercero Blvd	El Segundxxxxx	California	(310) 536-0611	http://www.nowebsiteacme123.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Prestige Worldwide	2525 E El UNICO Blvd	El Segundoooo	California	(310) 536-0611	http://www.nowebsiteacme456.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Tambourines Express	25 E El Tercero Blvd	El Mojave	California	(310) 536-0611	http://www.nowebsiteacme123.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Universal Remotes Inc.	27 E El Quatero Blvd	El Segundxxxxx	Florida	(310) 536-0611	http://www.nowebsiteacme567.com</div>
-        <div class="rect demo-dark" data-options="dxItem: {ratio: 1}"> Discount Exorcisms	25 E El Cincero Blvd	Mozambique	Arizona	(311) 536-0613	http://www.websiteacme789.com</div>
-
-
-            </div>
-      </div>
-      <br />
-
-
-
+      <div id="gridContainer"></div>
+    </div>
+   
+    <div class="demo-container">
+      <div id="list"></div>
+     
+      
+          <span>🔍Search  </span>
+          <div id="searchMode"></div>
+        </div>
       </div>
     </div>
+    
+    <div class="demo-container">
+      <div class="list-container">
+        <div id="simpleList"></div>
+      </div>
+    </div>
+    
+    <script>$(() => {
+      const listWidget = $('#list').dxList({
+        dataSource: products,
+        height: 400,
+        searchEnabled: true,
+        searchExpr: 'Name',
+        itemTemplate(data) {
+          return $('<div>').text(data.Name);
+        },
+      }).dxList('instance');
+      
+    
+      
+      //change this to regular search bar************************
+      $('#searchMode').dxSelectBox({
+        dataSource: ['contains', 'startswith', 'equals'],
+        value: 'contains',
+        onValueChanged(data) {
+          listWidget.option('searchMode', data.value);
+        },
+      }).dxSelectBox('instance');
+    });
+  
+    $(() => {
+      $('#simpleList').dxList({
+        dataSource: companies,
+        height: '100%',
+        grouped: true,
+        collapsibleGroups: false,
+        groupTemplate(data) {
+          return $(`<div> ${data.key}</div>`);
+        },
+      });
+    });</script>
+
+    <script>const companies = [{
+      key: 'Company Name',
+      items: ['Premier Buy, 123 Abc St', 'ElectrixMax', 'Video Emporium', 'Screen Shop', 'Braeburn', 'PriceCo', 'Ultimate Gadget', 'EZ Stop', 'Clicker',
+    'Store of America', 'Zone Toys', 'ACME', 'Dental Implants Inc.', 'Flowers from Algernon', 'Prestige WW', 'Tambourines Express', 'Universal Remotes',
+    'Discount Exorcisms' ],
+     
+    }];</script>
+     <script>$(() => {
+        let selectedRowIndex = -1;
+        
+      
+        $('#action-add').dxSpeedDialAction({
+          label: 'Add row',
+          icon: 'add',
+          index: 1,
+          onClick() {
+            grid.addRow();
+            grid.deselectAll();
+          },
+        }).dxSpeedDialAction('instance');
+      
+        const deleteSDA = $('#action-remove').dxSpeedDialAction({
+          icon: 'trash',
+          label: 'Delete row',
+          index: 2,
+          visible: false,
+          onClick() {
+            grid.deleteRow(selectedRowIndex);
+            grid.deselectAll();
+          },
+        }).dxSpeedDialAction('instance');
+      
+        const editSDA = $('#action-edit').dxSpeedDialAction({
+          label: 'Edit row',
+          icon: 'edit',
+          index: 3,
+          visible: false,
+          onClick() {
+            grid.editRow(selectedRowIndex);
+            grid.deselectAll();
+          },
+        }).dxSpeedDialAction('instance');
+      
+        const grid = $('#grid').dxDataGrid({
+          dataSource: employees,
+          showBorders: true,
+          keyExpr: 'ID',
+          selection: {
+            mode: 'single',
+          },
+          paging: {
+            enabled: false,
+          },
+          editing: {
+            mode: 'popup',
+            texts: {
+              confirmDeleteMessage: '',
+            },
+          },
+          onSelectionChanged(e) {
+            selectedRowIndex = e.component.getRowIndexByKey(e.selectedRowKeys[0]);
+      
+            deleteSDA.option('visible', selectedRowIndex !== -1);
+            editSDA.option('visible', selectedRowIndex !== -1);
+          },
+          columns: [
+            {
+              dataField: 'Prefix',
+              caption: 'Title',
+            },
+            'FirstName',
+            'LastName',
+            {
+              dataField: 'Position',
+              width: 130,
+            }, {
+              dataField: 'StateID',
+              caption: 'State',
+              width: 125,
+              lookup: {
+                dataSource: states,
+                displayExpr: 'Name',
+                valueExpr: 'ID',
+              },
+            }, {
+              dataField: 'BirthDate',
+              dataType: 'date',
+              width: 125,
+            },
+          ],
+        }).dxDataGrid('instance');
+      
+      
+      });</script>
+     
+    </div>
   </body>
-</html>
-
-                   
-
-    </header>
-    </main>
-    <footer>
-        &copy;2020 by McGuire Productions
-    </footer>
-
-    <script src="./js/script.js"></script>
-</body>
-
-
 </html>
