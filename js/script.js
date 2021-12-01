@@ -1,4 +1,4 @@
-
+//main button
 $(document).ready(function () {
   $("#buttonContainer").dxButton({
     text: "+",
@@ -8,7 +8,6 @@ $(document).ready(function () {
   })
 
 });
-
 
 //form button
 $(document).ready(function () {
@@ -21,8 +20,7 @@ $(document).ready(function () {
 
 });
 
-
-//popup 
+/*//popup is not working so far...
 $(function () {
   $("#popup").dxPopup({
       contentTemplate: () => {
@@ -39,7 +37,6 @@ $(function () {
   Auctor urna nunc id cursus metus aliquam eleifend mi in. Tellus orci ac auctor augue mauris augue neque gravida. Nullam vehicula ipsum a arcu.
   Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Cursus in hac habitasse platea dictumst. Egestas dui id ornare arcu.
   Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.</p>
-
   <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Neque volutpat ac tincidunt vitae semper quis lectus.
   Sed sed risus pretium quam vulputate dignissim suspendisse in. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
   Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
@@ -85,4 +82,4 @@ $(function () {
       position: "center"
   });
   // ...
-});
+});*/
