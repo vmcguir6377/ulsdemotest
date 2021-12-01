@@ -1,75 +1,88 @@
 
-var taskIdCounter = 0;
-
-var formEl = document.querySelector("#task-form");
-var tasksToDoEl = document.querySelector("#tasks-to-do");
-var pageContentEl = document.querySelector("#page-content");
-/*$(document).ready(function(){
-  $("button").click(function(){
-    $("p").hide();
-  });
-});*/
-
 $(document).ready(function () {
   $("#buttonContainer").dxButton({
-      text: "+",
-      onClick: function () {
-        $("[href]").fadeIn();
-      }})
-    });
+    text: "+",
+    onClick: function () {
+      $("[href]").fadeIn();
+    }
+  })
 
-    $(".control_save").click(function () {
-          $("#client-form").saveForm();
-          return false;
-      });
+});
 
-      $(".control_restore").click(function () {
-          $("#client-form").restoreForm();
-          return false;
-      });
 
-      //form 
-      $(document).ready(function() {
-        $("div#form1").append(
-        // Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
-        $("<h3/>").text("Contact Form"), $("<p/>").text("Please fill out this form to be added to the client roster."), $("<form/>", {
-        action: '#',
-        method: '#'
-        }).append(
-        // Create <form> Tag and Appending in HTML Div form1.
-        $("<input/>", {
-        type: 'text',
-        id: 'vname',
-        name: 'name',
-        placeholder: 'Your Name'
-        }), // Creating Input Element With Attribute.
-        $("<input/>", {
-        type: 'text',
-        id: 'vcompanyname',
-        name: 'company',
-        placeholder: 'Your Company Name'
-        }),
-        $("<input/>", {
-            type: 'text',
-            id: 'vaddress',
-            name: 'address',
-            placeholder: 'Your Company Address'
-        }),
-        $("<input/>", {
-            type: 'text',
-            id: 'vcontactnumber',
-            name: 'number',
-            placeholder: 'Your Contact Number'
-        }),
-        $("<input/>", {
-            type: 'text',
-            id: 'vemail',
-            name: 'email',
-            placeholder: 'Your Email'
-        }),
-         $("<br/>"), $("<input/>", {
-        type: 'submit',
-        id: 'submit',
-        value: 'Submit'
-        })))
-        });
+//form button
+$(document).ready(function () {
+  $("#buttonContainer2").dxButton({
+    text: "+",
+    onClick: function () {
+      $("[href]").fadeIn();
+    }
+  })
+
+});
+
+
+//popup 
+$(function () {
+  $("#popup").dxPopup({
+      contentTemplate: () => {
+          const formcontent = $("<div />");
+          formcontent.append(
+              $("Add User").attr("src", "./images/dx-logo.png"),
+              $(popupText)
+          );
+          return formcontent;
+      },
+  });
+  const popupText = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Penatibus et magnis dis parturient. Eget dolor morbi non arcu risus. Tristique magna sit amet purus gravida quis blandit.
+  Auctor urna nunc id cursus metus aliquam eleifend mi in. Tellus orci ac auctor augue mauris augue neque gravida. Nullam vehicula ipsum a arcu.
+  Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Cursus in hac habitasse platea dictumst. Egestas dui id ornare arcu.
+  Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.</p>
+
+  <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Neque volutpat ac tincidunt vitae semper quis lectus.
+  Sed sed risus pretium quam vulputate dignissim suspendisse in. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
+  Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
+  Vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet risus feugiat in ante metus dictum at.</p>`;
+});
+
+$(function () {
+  $("#popup").dxPopup({
+      // ...
+      visible: true,
+      closeOnOutsideClick: true
+  });
+
+
+
+  //show or hide popup
+  const popup = $("#popup").dxPopup("instance");
+  $("#button").dxButton({
+      text: "Form",
+      onClick: () => {
+          popup.show();
+      }
+  });
+});
+
+
+//popup titleing
+$(function () {
+  $("#popup").dxPopup({
+      // ...
+      showTitle: true,
+      title: "Information",
+  });
+  // ...
+});
+
+
+//popup positioning
+$(function () {
+  $("#popup").dxPopup({
+      // ...
+      dragEnabled: true,
+      position: "center"
+  });
+  // ...
+});
