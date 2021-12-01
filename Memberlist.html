@@ -1,233 +1,294 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/devextreme@21.2-next/dist/css/dx.material.orange.dark.compact.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.1.6/js/dx.all.js"></script>
     <script src="./data.js"></script>
     <script src="./memberlist.js"></script>
-    <script src="Scripts/jquery-1.10.2.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
-    <script src="Content/jquery.dataTables.min.js"></script>
-    <script src="Content/dataTables.bootstrap4.min.js"></script>
-    <link href="Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="Content/select.bootstrap.min.css" rel="stylesheet" />
-    <script src="Content/dataTables.select.min.js"></script>
 
-    <table id="memberlist" class="table table-bordered table-hoverNA table-stripedNA dtCustom” >
-      <thead>
-          <tr class=" back">
+</head>
 
+<body class="dx-viewport">
+    <div class="memberList">
+        <div id="html-editor"></div>
+        <div id="resizing"></div>
+    </div>
+    <div class="option">
+        <div id="contextMenu"></div>
+    </div>
+    </div>
+    </div>
+
+    <script>$(() => {
+            const editor = $('#html-editor').dxHtmlEditor({
+                value: markup,
+                height: 750,
+                tableContextMenu: { enabled: true },
+                tableResizing: { enabled: true },
+                toolbar: {
+                    items: [
+                        'bold', 'color', 'separator',
+                        'alignLeft', 'alignCenter', 'alignCenter', 'separator',
+                        'insertTable', 'insertHeaderRow', 'insertRowAbove', 'insertRowBelow',
+                        'separator', 'insertColumnLeft', 'insertColumnRight',
+                        'separator', 'deleteColumn', 'deleteRow', 'deleteTable',
+                        'separator', 'cellProperties', 'tableProperties',
+                    ],
+                },
+            }).dxHtmlEditor('instance');
+
+            $('#resizing').dxCheckBox({
+                text: 'Allow Table Resizing',
+                value: true,
+                onValueChanged(e) {
+                    editor.option('tableResizing.enabled', e.value);
+                },
+            });
+
+            $('#contextMenu').dxCheckBox({
+                text: 'Enable Table Context Menu',
+                value: true,
+                onValueChanged(e) {
+                    editor.option('tableContextMenu.enabled', e.value);
+                },
+            });
+        });
+    </script>
+
+
+    <h3>
+        User List
+    </h3>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: left; width: 320px;">Company</th>
+                <th style="text-align: center;">Address</th>
+                <th style="text-align: center;">City</th>
+                <th style="text-align: right;">State</th>
+                <th style="text-align: right;">Phone Number</th>
+                <th style="text-align: center;">Website</th>
+            </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="back"></td>
-                <td><u>Company Name</td>
-                <td><u>Address</td>
-                <td><u>City</td>
-                <td><u>State</td>
-                <td><u>Phone Number</td>
-                <td><u>Website</u></td>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Express Rhinoplasty</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>1450 Angelina Blvd</p>
+                </td>
+                <td style="text-align: center;">Waukeegan</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Michigan</p>
+                <td style="text-align: right;">(612)555-1212</td>
+                <td style="text-align: center;">www.nowebsitespeedynose.com</td>
+                </td>
             </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Holiday Chainsaw Blades</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>1000 Oaks Blvd</p>
+                </td>
+                <td style="text-align: center;">Thousand Oaks</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>California</p>
+                <td style="text-align: right;">(818)309-6186</td>
+                <td style="text-align: center;">www.nowebsitemerrytimber.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Photo Shred</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>1800 Nikon Blvd</p>
+                </td>
+                <td style="text-align: center;">Gary</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Indiana</p>
+                <td style="text-align: right;">(616)552-6507</td>
+                <td style="text-align: center;">www.nowebsitedeleteit.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Extreme Tacos</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>2720 Chimichanga Ct</p>
+                </td>
+                <td style="text-align: center;">Chico</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>California</p>
+                <td style="text-align: right;">(800)300-4453</td>
+                <td style="text-align: center;">www.nowebsitetacos4sale.com</td>
+                </td>
 
-            <tr>
-                <td class="back"></td>
-                <td>Premier Buy</td>
-                <td>7601 Penn Avenue South</td>
-                <td>Richfield</td>
-                <td>Minnesota</td>
-                <td> (612) 291-1000</td>
-                <td>http://www.nowebsitepremierbuy.com</td>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Bling Medical Clinic</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>6270 Anchovi Ave</p>
+                </td>
+                <td style="text-align: center;">Austin</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Texas</p>
+                <td style="text-align: right;">(305)600-6783</td>
+                <td style="text-align: center;">www.nowebsiteohhappyday.com</td>
+                </td>
             </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Super 1 Dry Cleaners</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>7340 Oman St</p>
+                </td>
+                <td style="text-align: center;">Miami</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Florida</p>
+                <td style="text-align: right;">(208)399-9999</td>
+                <td style="text-align: center;">www.nowebsitemiamiclean.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Qwik-Tie Hair Extensions</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>5000 El Dorado Blvd</p>
+                </td>
+                <td style="text-align: center;">Murfreesboro</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Tennessee</p>
+                <td style="text-align: right;">(615)848-7063</td>
+                <td style="text-align: center;">www.nowebsiteqwikhair.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Silver Fox Casino</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>2330 Alameda Avenue</p>
+                </td>
+                <td style="text-align: center;">Studio City</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>California</p>
+                <td style="text-align: right;">(610)870-1215</td>
+                <td style="text-align: center;">www.nowebsiteluckyday.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Happy Paws Animal Daycare</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>3125 Fifteenth St</p>
+                </td>
+                <td style="text-align: center;">Atlanta</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Georgia</p>
+                <td style="text-align: right;">(612)515-2000</td>
+                <td style="text-align: center;">www.nowebsitehappypaws.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Michael's Mason Jars</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>2100 Elvira Ave</p>
+                </td>
+                <td style="text-align: center;">St. Andrews</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Louisiana</p>
+                <td style="text-align: right;">(910)423-2419</td>
+                <td style="text-align: center;">www.nowebsitemasonjars.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Piggly Waggly</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>1800 Centerpoint Rd</p>
+                </td>
+                <td style="text-align: center;">Nashville</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Tennessee</p>
+                <td style="text-align: right;">(615)240-7216</td>
+                <td style="text-align: center;">www.nowebsitegroceries.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">JB's Restaurant</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>2300 Clark Blvd</p>
+                </td>
+                <td style="text-align: center;">McMinnville</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Tennessee</p>
+                <td style="text-align: right;">(423)995-1600</td>
+                <td style="text-align: center;">www.nowebsitejbfoods.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Badgers Beauty Supply</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>6160 McBane St</p>
+                </td>
+                <td style="text-align: center;">Alpharetta</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Georgia</p>
+                <td style="text-align: right;">(505)855-7272</td>
+                <td style="text-align: center;">www.nowebsitebeautysupply.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Seville Law Office</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>2647 Miner Place</p>
+                </td>
+                <td style="text-align: center;">Ekalaka</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Montana</p>
+                <td style="text-align: right;">(406)555-5555</td>
+                <td style="text-align: center;">www.nowebsitesevillelaw.com</td>
+                </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left; width: 320px;">Absolute Oil Change</td>
+                <td style="text-align: center; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>2800 Borad St.</p>
+                </td>
+                <td style="text-align: center;">Gallatin</td>
+                <td style="text-align: right; color: white;">
+                    <p style="font-size: 1.15em;"></p>
+                    <p>Tennessee</p>
+                <td style="text-align: right;">(608)400-5526</td>
+                <td style="text-align: center;">www.nowebsiteabsolute.com</td>
+                </td>
 
-            <tr>
-                <td class="back"></td>
-                <td>ElectrixMax</td>
-                <td>263 Shuman Blvd</td>
-                <td>Naperville</td>
-                <td>Illinois</td>
-                <td> (630)438-7800</td>
-                <td>http://www.nowebsiteelectrixmax.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Screen Shop</td>
-                <td>1000 Lowes Blvd</td>
-                <td>Mooresville</td>
-                <td>North Carolina</td>
-                <td> (800)445-6937</td>
-                <td>http://www.http://www.nowebsitescreenshop.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Braeburn</td>
-                <td>1 Infinite Loop</td>
-                <td>Cupertino</td>
-                <td>California</td>
-                <td> (408)996-1010</td>
-                <td>http://www.http://www.nowebsitebraeburn.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>PriceCo</td>
-                <td>30 Hunter Lane</td>
-                <td>Camp Hill</td>
-                <td>Pennsylvania</td>
-                <td> (717)761-2633</td>
-                <td>http://www.http://www.nowebsitepriceco.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Ultimate Gadet</td>
-                <td>1557 Watson Blvd</td>
-                <td>Warner Robbins</td>
-                <td>Georgia</td>
-                <td> (995)623-6785</td>
-                <td>http://www.http://www.nowebsiteultimategadget.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>EZ Stop</td>
-                <td>618 Michillinda Ave.</td>
-                <td>Arcadia</td>
-                <td>California</td>
-                <td> (626)265-8632</td>
-                <td>http://www.http://www.nowebsiteezstop.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Clicker</td>
-                <td>1100 W. Artesia Blvd</td>
-                <td>Compton</td>
-                <td>California</td>
-                <td> (310)884-9000</td>
-                <td>http://www.http://www.nowebsiteclicker.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Store of America</td>
-                <td>2401 Utah Ave S.</td>
-                <td>Seattle</td>
-                <td>Washington</td>
-                <td> (206)447-1575</td>
-                <td>http://www.http://www.nowebsitestoreofamerica.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
-            </tr>
-            <tr>
-                <td class="back"></td>
-                <td>Video Emporium</td>
-                <td>1201 Elm Street</td>
-                <td>Dallas</td>
-                <td>Texas</td>
-                <td> (214)854-3000</td>
-                <td>http://www.http://www.nowebsitevideoemporium.com</td>
             </tr>
         </tbody>
     </table>
-
-    <script>
-        var egTable;
-        $(document).ready(function () {
-            egTable = $('#memberlist').DataTable({
-                "bSort": false,
-                columnDefs: [{
-                    orderable: false,
-                    className: 'select-checkbox',
-                    targets: 0
-                }],
-                select: {
-                    style: 'multi',
-                    selector: 'td:first-child'
-                }
-            });
-        });
-        function Check(title) {
-            var id = title.substr(title.length - 1);
-            if ($("[data-id='" + title + "']").hasClass('fa-square-o')) {
-                $("[data-id='" + title + "']").removeClass('fa-square-o').addClass('fa-check-square-o');
-                egTable.columns(id).select();
-            }
-            else {
-                $("[data-id='" + title + "']").removeClass('fa-check-square-o').addClass('fa-square-o');
-                egTable.columns(1).deselect();
-            }
-        }</script>
+    <br>
+    
