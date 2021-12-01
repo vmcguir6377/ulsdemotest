@@ -1,67 +1,22 @@
-$(() => {
-  const form = $('#form').dxForm({
-    formData: companies[0],
-    readOnly: false,
-    showColonAfterLabel: true,
-    labelLocation: 'top',
-    minColWidth: 300,
-    colCount: 2,
-  }).dxForm('instance');
-
-  $('#select-company').dxSelectBox({
-    displayExpr: 'Name',
-    dataSource: companies,
-    value: companies[0],
-    onValueChanged(data) {
-      form.option('formData', data.value);
-    },
+$(function () {
+  $("#popup").dxPopup({
+      contentTemplate: () => {
+          const formcontent = $("<div />");
+          content.append(
+              $("<img />").attr("src", "./images/dx-logo.png"),
+              $(popupText)
+          );
+          return formcontent;
+      },
   });
+  const popupText = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Penatibus et magnis dis parturient. Eget dolor morbi non arcu risus. Tristique magna sit amet purus gravida quis blandit.
+  Auctor urna nunc id cursus metus aliquam eleifend mi in. Tellus orci ac auctor augue mauris augue neque gravida. Nullam vehicula ipsum a arcu.
+  Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Cursus in hac habitasse platea dictumst. Egestas dui id ornare arcu.
+  Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.</p>
 
-  $('#label-location').dxSelectBox({
-    items: ['left', 'top'],
-    value: 'top',
-    onValueChanged(data) {
-      form.option('labelLocation', data.value);
-    },
-  });
-
-  $('#columns-count').dxSelectBox({
-    items: ['auto', 1, 2, 3],
-    value: 2,
-    onValueChanged(data) {
-      form.option('colCount', data.value);
-    },
-  });
-
-  $('#min-column-width').dxSelectBox({
-    items: [150, 200, 300],
-    value: 300,
-    onValueChanged(data) {
-      form.option('minColWidth', data.value);
-    },
-  });
-
-  $('#width').dxNumberBox({
-    value: undefined,
-    max: 550,
-    onValueChanged(data) {
-      form.option('width', data.value);
-    },
-  });
-
-  $('#read-only').dxCheckBox({
-    text: 'readOnly',
-    value: false,
-    onValueChanged(data) {
-      form.option('readOnly', data.value);
-    },
-  });
-
-  $('#show-colon').dxCheckBox({
-    text: 'showColonAfterLabel',
-    value: true,
-    onValueChanged(data) {
-      form.option('showColonAfterLabel', data.value);
-    },
-  });
+  <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Neque volutpat ac tincidunt vitae semper quis lectus.
+  Sed sed risus pretium quam vulputate dignissim suspendisse in. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
+  Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
+  Vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet risus feugiat in ante metus dictum at.</p>`;
 });
