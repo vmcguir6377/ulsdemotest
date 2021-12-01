@@ -1,8 +1,12 @@
 #grid {
   height: 500px;
 }
-.back{
+#tbody {
+  font-weight: 500;
+}
+#memberlist {
   font-size: 16px;
+  color: #575858;
 }
 .dx-datagrid .dx-data-row > td.bullet {
   padding-top: 0;
@@ -140,6 +144,37 @@ body {
   }
   
    #buttonContainer {
+    background-color: white;
+    border: none;
+    color: rgb(12, 12, 12);
+    text-align: center;
+    text-decoration: none;
+    display:flexbox;
+    margin-left: 750px;
+    margin-right: 35px;
+    width: 3%;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 49%;
+  }
+
+  #formButton {
+    border: none;
+    color: lightgray;
+    text-align: center;
+    text-decoration: none;
+    display:flexbox;
+    margin-left: 750px;
+    margin-right: 35px;
+    width: 3%;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius:5%;
+  }
+
+  #buttonContainer2 {
     background-color: red;
     border: none;
     color: rgb(12, 12, 12);
