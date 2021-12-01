@@ -1,7 +1,8 @@
 //main button
+
 $(document).ready(function () {
-  $("#buttonContainer").dxButton({
-    text: "+",
+  $(".dx-viewport").dxButton({
+    text: "",
     onClick: function () {
       $("[href]").fadeIn();
     }
@@ -9,16 +10,40 @@ $(document).ready(function () {
 
 });
 
+/*$(document).ready(function () {
+  $("#button-container").dxButton({
+    text: "+",
+    onClick: function () {
+      $("[href]").fadeIn();
+    }
+  })
+
+});*/
+
+/*$(() => {
+  $('#icon-done').dxButton({
+      icon: 'check',
+      type: 'success',
+      text: 'Done',
+      onClick: function () {
+          $("[href]").fadeIn();
+      }
+  })*/
 //form button
-$(document).ready(function () {
-  $("#buttonContainer2").dxButton({
+/*$(document).ready(function () {
+  $(".dx-viewport").dx-icon-close({
     text: "+",
     onClick: function () {
-      $("[href]").fadeIn();
+      $("dx-icon-close").fadeIn();
     }
-  })
+  })*/
 
-});
+ 
+
+
+   
+   
+
 
 /*//popup is not working so far...
 $(function () {
