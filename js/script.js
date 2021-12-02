@@ -1,34 +1,30 @@
 //main button
 
 $(document).ready(function () {
-  $(".dx-viewport").dxButton({
+  $(".widget").on('click', function (e){
     text: "",
-    onClick: function () {
-      $("[href]").fadeIn();
-    }
-  })
-
+      alert("Your values are :"+ $(this).data("value"));        
+    });   
 });
 
-/*$(document).ready(function () {
-  $("#button-container").dxButton({
+$(document).ready(function () {
+  $("#buttons").button({
     text: "+",
     onClick: function () {
       $("[href]").fadeIn();
     }
   })
 
-});*/
-
-/*$(() => {
-  $('#icon-done').dxButton({
+});
+$(() => {
+  $('#buttons').dxButton({
       icon: 'check',
       type: 'success',
       text: 'Done',
       onClick: function () {
           $("[href]").fadeIn();
       }
-  })*/
+  })
 //form button
 /*$(document).ready(function () {
   $(".dx-viewport").dx-icon-close({
