@@ -131,6 +131,13 @@ body {
    
     /*buttons*/
 
+    #success-contained {
+      color: black;
+      background-color: red;
+      border-radius: 48%;
+      margin: 4px 2px;
+    }
+
     #buttonContainer {
     background-color: white;
     border: none;
@@ -178,4 +185,4 @@ body {
       form .form-group button {
         width: 100%;
       }
-}
+    }
