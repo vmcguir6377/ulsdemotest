@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 </html>
 
 <head>
@@ -11,90 +10,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.1.6/js/dx.all.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
+    
     <!-- DevExtreme theme -->
     <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.dark.css">
-
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script>
+
     <title>DevExtreme/jQuery Demo</title>
 </head>
 
 <body class="dx-viewport">
     <h1>DevExtreme/jQuery Demo</h1>
-    <div class="demo-container">
-        <div class="buttons-demo">
-            <div class="buttons">
-                <div id="startButton">
-                    <input type="button" value="+" style="border-radius: 50%"; style="background-color:red" onclick="toggle_visibility('listbutton', 'formbutton');">
-                    <div id="listbutton">
-                        <a href="./Memberlist.html">
-                            <input type="button" value="Data 📁" onClick="myFunction()" />
+    <div class="buttons">
+        <div id="startButton">
+            <input type="button" value="+" style="border-radius: 50%" ;
+                onclick="toggle_visibility('listbutton', 'formbutton');">
+            <div id="listbutton">
+                <a href="./Memberlist.html">
+                    <input type="button" value="Data 📁" onClick="myFunction()" />
+                </a>
+                <div id="formbutton">
+                    <a href="./Memberform.html">
+                        <input type="button" value="Form 💼" onclick="myFunction()" />
+                    </a>
+                </div>
 
-                        </a>
-                        <div id="formbutton">
-                            <a href="./Memberform.html">
-                                <input type="button" value="Form 💼" onClick="myFunction()" />
-                            </a>
-                        </div>
+                <style>
+                    #listbutton {
+                        display: none;
+                        cursor: pointer;
+                    }
+                </style>
 
-                        <button id="listbutton" class="btn btn-primary">Data 📁</button>
-
-                        <script>
-                            function myFunction() {
-                                window.location.href = "/Memberlist.html";
-                         </script>
-                         
-                         <style>
-                            #listbutton {
-                                display: none;
-                                cursor: pointer;
-                                width: 300px;
-                                border: 1px solid #ccc;
-                                padding: 14px;
-                                background: #ececec;
-                            }
-                        </style>
-
-                        <div class="buttons-demo">
-                            <div class="buttons">
-                                <div id="listbutton">
-                                    <a href="./Memberlist.html">
-                                        <input type="button" value="Data 📁" onClick="myFunction()" />
-
-                                    </a>
-                                </div>
-                                <script>
-                                function myFunction() {
-                                    window.location.href = "/Memberlist.html";
-
-                                </script>
-
-                            </div>
-                            <br></br>
-                            <script>
-                                    function myFunction() {
-                                        window.location.href = "/Memberform.html";
-
-                            </script>
-                            <script type="text/javascript">
-                                            function toggle_visibility(formbutton) {
-                                                var e = document.getElementById(formbutton);
-                                                if (e.style.display == 'block')
-                                                    e.style.display = 'none';
-                                                else
-                                                    e.style.display = 'block';
-                                            }
-                            </script>
-                        </div>
-
-
-
-
-
-                        <script src="./js/script.js"></script>
-</body>
-
+                <script type="text/javascript">
+                    function toggle_visibility(formbutton) {
+                        var e = document.getElementById(formbutton);
+                        if (e.style.display == 'block')
+                            e.style.display = 'none';
+                        else
+                            e.style.display = 'block';
+                    };
+                </script>
+            </div>
+        </body>
 </html>
