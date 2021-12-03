@@ -2,109 +2,109 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <title>DevExtreme Demo</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
   <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.common.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.light.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.dark.css" />
   <script src="https://cdn3.devexpress.com/jslib/21.2.3/js/dx.all.js"></script>
-  <script src="data.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script src="index.js"></script>
 </head>
 
-<body class="dx-viewport">
-
-  <!-- DevExtreme theme -->
-  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.3/css/dx.dark.css">
-  
-      <body class="dx-viewport">
-        <div id="formcontainer">
-     
-          
-          <script>$(function () {
-            $("#popup").dxPopup({
-                contentTemplate: () => {
-                    const content = $("<div />");
-                    content.append(
-                        $("<img />").attr("src", "./images/dx-logo.png"),
-                        $(popupText)
-                    );
-                    return content;
-                },
-            });
-            const popupText = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Penatibus et magnis dis parturient. Eget dolor morbi non arcu risus. Tristique magna sit amet purus gravida quis blandit.
-            Auctor urna nunc id cursus metus aliquam eleifend mi in. Tellus orci ac auctor augue mauris augue neque gravida. Nullam vehicula ipsum a arcu.
-            Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Cursus in hac habitasse platea dictumst. Egestas dui id ornare arcu.
-            Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.</p>
-          
-            <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Neque volutpat ac tincidunt vitae semper quis lectus.
-            Sed sed risus pretium quam vulputate dignissim suspendisse in. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
-            Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
-            Vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet risus feugiat in ante metus dictum at.</p>`;
-          });</script>
-
-<body class="dx-viewport"></body>
-<div id="formcontainer">
-
-        <h1>Add User</h1>
-
-    <div class="widget-container">
-  <div>Name</div>
-  <div id="name"></div>
-  <div id="form"></div>
-</div>
-<br>
-<div class="widget-container">
-  <div>Address</div>
-  <div id="address"></div>
-  <div id="form"></div>
-</div>
-<br>
-<div class="widget-container">
-  <div>City</div>
-  <div id="city"></div>
-  <div id="form"></div>
-</div>
-<br>
-<div class="widget-container">
-  <div>State</div>
-  <div id="state"></div>
-  <div id="form"></div>
-</div>
-<br>
-<div class="widget-container">
-  <div>Zip Code</div>
-  <div id="zip"></div>
-  <div id="form"></div>
-</div>
-<br>
-<div class="widget-container">
-  <div>Phone</div>
-  <div id="phone"></div>
-  <div id="form"></div>
-</div>
-<br>
-<div class="widget-container">
-  <div>Website</div>
-  <div id="website"></div>
-  <div id="form"></div>
-</div>
-
-  <div class="option">
-    <div id="read-only"></div>
+<body>
+  <div id="returnbutton">
+    <a href="./index.html">
+      <input type="button" value="X" style="border-radius: 50%" onClick="myFunction()" />
+    </a>
+    <body class="dx-viewport">
+      <h2>Add User</h2>
+      <div class="demo-container">
+        <div class="form">
+          <div class="dx-fieldset">
+            <div class="dx-field">
+              <div class="dx-field-label">Name</div>
+              <div class="dx-field-value">
+                <div id="clear-button"></div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="dx-field-label">Address</div>
+              <div class="dx-field-value">
+                <div id="clear-button1"></div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="dx-field-label">City</div>
+              <div class="dx-field-value">
+                <div id="clear-button2"></div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="dx-field-label">State</div>
+              <div class="dx-field-value">
+                <div id="clear-button3"></div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="dx-field-label">Zip Code</div>
+              <div class="dx-field-value">
+                <div id="clear-button4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dx-field">
+            <div class="dx-field-label">Phone Number</div>
+            <div class="dx-field-value">
+              <div id="clear-button5"></div>
+            </div>
+          </div>
+        </div>
+         <div class="dx-field">
+          <div class="dx-field-label">Website</div>
+          <div class="dx-field-value">
+            <div id="clear-button6"></div>
+          </div>
+        </div>
+      </div>
   </div>
-  <div class="option">
-    <div id="show-colon"></div>
   </div>
-</div>
-</div>
-</div>
-   
-          </body>
-          </html>
 
+  <script>$(() => {
+      $('#clear-button').dxTextBox({
+        value: 'John Smith',
+        showClearButton: true,
+      });
+
+      $('#clear-button1').dxTextBox({
+        value: '3000 W. Alameda Ave.',
+        showClearButton: true,
+      });
+
+      $('#clear-button2').dxTextBox({
+        value: 'Hackensack',
+        showClearButton: true,
+      });
+
+      $('#clear-button3').dxTextBox({
+        value: 'New Jersey',
+        showClearButton: true,
+      });
+      $('#clear-button4').dxTextBox({
+        value: '07601',
+        showClearButton: true,
+      });
+      $('#clear-button5').dxTextBox({
+        value: '1+(710)565-2300',
+        showClearButton: true,
+      });
+
+      $('#clear-button6').dxTextBox({
+        value: 'www.nowebsiteanywhereUSA.com',
+        showClearButton: true,
+      });
+      const emailEditor = $('#email').dxTextBox({
+        value: 'www.nowebsiteanywhereUSA.com',
+        readOnly: true,
+        hoverStateEnabled: true,
+      }).dxTextBox('instance');
+    });
+    </script>
+  </body>
+</html>
