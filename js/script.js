@@ -1,14 +1,14 @@
 //main button
 
-$(document).ready(function () {
+/*$(document).ready(function () {
   $(".widget").on('click', function (e){
     text: "",
       alert("Your values are :"+ $(this).data("value"));        
     });   
-});
+});*/
 
 $(document).ready(function () {
-  $("#buttons").button({
+  $("#startButton").button({
     text: "+",
     onClick: function () {
       $("[href]").fadeIn();
@@ -16,7 +16,9 @@ $(document).ready(function () {
   })
 
 });
-$(() => {
+
+
+/*$(() => {
   $('#buttons').dxButton({
       icon: 'check',
       type: 'success',
@@ -63,16 +65,12 @@ $(function () {
   Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
   Vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet risus feugiat in ante metus dictum at.</p>`;
 });
-
 $(function () {
   $("#popup").dxPopup({
       // ...
       visible: true,
       closeOnOutsideClick: true
   });
-
-
-
   //show or hide popup
   const popup = $("#popup").dxPopup("instance");
   $("#button").dxButton({
@@ -82,8 +80,6 @@ $(function () {
       }
   });
 });
-
-
 //popup titleing
 $(function () {
   $("#popup").dxPopup({
@@ -93,8 +89,6 @@ $(function () {
   });
   // ...
 });
-
-
 //popup positioning
 $(function () {
   $("#popup").dxPopup({
