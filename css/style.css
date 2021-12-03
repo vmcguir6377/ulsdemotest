@@ -1,66 +1,3 @@
-.memberList {
-  height: 0px;
-}
-
-.dx-viewport:not(.dx-theme-ios7) .dx-fieldset-header {
-  font-size: 16px;
-}
-
-h1 {
-  text-align: center;
-}
-.dx-viewport {
-  margin-top: 25px;
-}
-
-.dx-viewport:not(.dx-theme-ios7) .dx-field {
-  
-  margin-right: 20px;
-  margin-top: 15px;
-  background-color: rgb(243, 94, 56);
-  text-align: center;
-  border-radius: 50%;
-}
-
-.dx-viewport:not(.dx-theme-ios7) .dx-field-value:not(.dx-widget) > .dx-button {
-  float: none;
-}
-
-.dx-viewport:not(.dx-theme-ios7) .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button),
-.dx-viewport:not(.dx-theme-ios7) .dx-field-label {
-  float: none;
-  width: 100%;
-}
-
-.dx-viewport:not(.dx-theme-ios7) .dx-field-label {
-  padding-left: 0;
-}
-
-.fields-container {
-  display: flex;
-  align-items: baseline;
-  text-align: center;
-  margin-left: 1750px;
-  margin-top: 750px;
-}
-
-.dx-field-value {
-  display: flex;
-}
-.caption {
-  font-size: 26px;
-  font-weight: 300;
-}
-
-#memberlist {
-  font-size: 18px;
-  color: #858888;
-}
-.dx-datagrid .dx-data-row > td.bullet {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 h1 {
 font-size: 16px;
 text-align: center;
@@ -104,86 +41,6 @@ body {
       flex-wrap: wrap;
     }
     
-    form input {
-      outline: none;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      font-size: 2.2rem;
-      border: 2px solid var(--grey);
-      border-radius: 12px;
-    }
-    
-    form .form-group {
-      margin: 10px 6px 10px 0;
-      flex: 1;
-    }
-    
-    .widget-container {
-      margin-right: 320px;
-      padding: 20px;
-      max-width: 550px;
-      min-width: 300px;
-    }
-    
-    #form {
-      margin-top: 25px;
-    }
-
-
-   
-    /*buttons*/
-
-   #buttons {
-            background-color: #62529c;
-            border-radius: 50%;
-            color: red;
-            padding: 15px 30px;
-            text-decoration: none;
-            margin: 4px 2px;
-            cursor: pointer;
-          }
-        
-
-    #success-contained {
-      color: black;
-      background-color: red;
-      border-radius: 48%;
-      margin: 4px 2px;
-    }
-
-    #buttonContainer {
-    background-color: white;
-    border: none;
-    color: rgb(68, 55, 55);
-    text-align: center;
-    text-decoration: none;
-    display:flexbox;
-    margin-left: 750px;
-    margin-right: 35px;
-    width: 3%;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 49%;
-  }
-
-  #formButton {
-    border: none;
-    color: lightgray;
-    text-align: center;
-    text-decoration: none;
-    display:flexbox;
-    margin-left: 750px;
-    margin-right: 35px;
-    width: 3%;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius:5%;
-  }
-
-   
     #buttonContainer:hover {
       box-shadow: 0 2px var(--grey);
       top: -2px;
@@ -194,9 +51,5 @@ body {
     @media screen and (max-width: 980px) {
       form .form-group {
         flex: 1 100%;
-      }
-    
-      form .form-group button {
-        width: 100%;
       }
     }
