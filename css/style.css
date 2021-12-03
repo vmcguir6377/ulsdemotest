@@ -6,6 +6,9 @@
   font-size: 16px;
 }
 
+h1 {
+  text-align: center;
+}
 .dx-viewport {
   margin-top: 25px;
 }
@@ -90,7 +93,7 @@ body {
   
   a href {
     display: none;
-    color: white;
+    color: gray;
     text-decoration: none;
     font-size: 26px;
   }
@@ -130,6 +133,17 @@ body {
 
    
     /*buttons*/
+
+   #buttons {
+            background-color: #62529c;
+            border-radius: 50%;
+            color: red;
+            padding: 15px 30px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+        
 
     #success-contained {
       color: black;
