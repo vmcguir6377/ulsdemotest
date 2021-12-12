@@ -1,55 +1,30 @@
 h1 {
-font-size: 16px;
-text-align: center;
-margin-top: 25px;
+    text-align: center;
 }
 
+#direction {
+    background-color: red;
+}
 body {
-    background-color:  black;
-    color: lightgray;
-    font-size: 48%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  dx-viewport {
-    background-color:  black;
-    color: lightgray;
-    font-size: 48%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  a href {
-    display: none;
-    color: gray;
-    text-decoration: none;
-    font-size: 26px;
-  }
- 
- form {
-      display: flex;
-      align-items: flex-end;
-      flex-wrap: wrap;
-    }
-    
-    #buttonContainer:hover {
-      box-shadow: 0 2px var(--grey);
-      top: -2px;
-    }
-    
-    
-    /*Media Queries*/
-    @media screen and (max-width: 980px) {
-      form .form-group {
-        flex: 1 100%;
-      }
-    }
+    text-align: center;
+    margin-top: 5%;
+    background-color: teal;
+}
+
+.button1 {
+    background-color: black;
+    color: white;
+    font-size: 1.4em;
+    border-radius: 1rem;
+}
+
+#formBox {
+    /* background-color: black;
+    border-radius: 1rem; */
+    display: true;
+}
+
+#gridContainer {
+    background-color: red;
+    color: red;
+}
