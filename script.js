@@ -1,5 +1,5 @@
 
-    //add roster  
+   //add roster  
     $(() => {
       $('#data').dxSpeedDialAction({
         label: 'User Roster',
@@ -8,6 +8,13 @@
         onClick: () => {
           _popup = $("<div>").appendTo("body").dxPopup({
             "visible": true,
+           scrolling: {
+                mode: 'infinite',
+              },
+              onContentReady(e) {
+                e.component.option('loadPanel.enabled', false);
+              },
+            
             onContentReady: '',
             onHidden: (e) => {
               e.component.dispose();
@@ -16,35 +23,35 @@
 
             },
             contentTemplate: (container) => {
-              let_data = $(`<div id = "gridContainer">`).appendTo(container)
+            let_data = $(`<div id = "gridContainer">`).appendTo(container)
                 .dxDataGrid({
                   dataSource: [{
-                    ID: 1,
-                    CompanyName: "Super Mart of the West",
-                    Address: "702 SW 8th Street",
-                    City: "Bentonville",
-                    State: "Arkansas",
-                    Zipcode: 72716,
-                    Phone: "(800) 555-2797",
-                    Website: "http://www.nowebsitesupermart.com"
+                    "ID": 1,
+                    "CompanyName": "Super Mart of the West",
+                    "Address": "702 SW 8th Street",
+                    "City": "Bentonville",
+                    "State": "Arkansas",
+                    "Zipcode": 72716,
+                    "Phone": "(800) 555-2797",
+                    "Website": "http://www.nowebsitesupermart.com"
                   }, {
-                    ID: 2,
-                    CompanyName: "Electronics Depot",
-                    Address: "2455 Paces Ferry Road NW",
-                    City: "Atlanta",
-                    State: "Georgia",
-                    Zipcode: 30339,
-                    Phone: "(800) 595-3232",
-                    Website: "http://www.nowebsitedepot.com"
+                    "ID": 2,
+                    "CompanyName": "Electronics Depot",
+                    "Address": "2455 Paces Ferry Road NW",
+                    "City": "Atlanta",
+                    "State": "Georgia",
+                    "Zipcode": 30339,
+                    "Phone": "(800) 595-3232",
+                    "Website": "http://www.nowebsitedepot.com"
                   }, {
-                    ID: 3,
-                    CompanyName: "K&S Music",
-                    Address: "1000 Nicllet Mall",
-                    City: "Minneapolis",
-                    State: "Minnesota",
-                    Zipcode: 55403,
-                    Phone: "(612) 304-6073",
-                    Website: "http://www.nowebsitemusic.com"
+                    "ID": 3,
+                    "CompanyName": "K&S Music",
+                    "Address": "1000 Nicllet Mall",
+                    "City": "Minneapolis",
+                    "State": "Minnesota",
+                    "Zipcode": 55403,
+                    "Phone": "(612) 304-6073",
+                    "Website": "http://www.nowebsitemusic.com"
                   }, {
                     "ID": 4,
                     "CompanyName": "Tom's Club",
@@ -135,7 +142,6 @@
                     "State": "Minnesota",
                     "Zipcode": 55423,
                     "Phone": "(612) 291-1000",
-                    "Fax": "(612) 291-2001",
                     "Website": "http://www.nowebsitepremierbuy.com"
                   }, {
                     "ID": 14,
@@ -145,7 +151,6 @@
                     "State": "Illinois",
                     "Zipcode": 60563,
                     "Phone": "(630) 438-7800",
-                    "Fax": "(630) 438-7801",
                     "Website": "http://www.nowebsiteelectrixmax.com"
                   }, {
                     "ID": 16,
@@ -155,7 +160,6 @@
                     "State": "North Carolina",
                     "Zipcode": 28117,
                     "Phone": "(800) 445-6937",
-                    "Fax": "(800) 445-6938",
                     "Website": "http://www.nowebsitescreenshop.com"
                   }, {
                     "ID": 17,
@@ -165,7 +169,6 @@
                     "State": "California",
                     "Zipcode": 95014,
                     "Phone": "(408) 996-1010",
-                    "Fax": "(408) 996-1012",
                     "Website": "http://www.nowebsitebraeburn.com"
                   }, {
                     "ID": 18,
@@ -175,7 +178,6 @@
                     "State": "Pennsylvania",
                     "Zipcode": 17011,
                     "Phone": "(717) 761-2633",
-                    "Fax": "(717) 761-2334",
                     "Website": "http://www.nowebsitepriceco.com"
                   }, {
                     "ID": 19,
@@ -185,7 +187,6 @@
                     "State": "Georgia",
                     "Zipcode": 31093,
                     "Phone": "(995) 623-6785",
-                    "Fax": "(995) 623-6786",
                     "Website": "http://www.nowebsiteultimategadget.com"
                   }, {
                     "ID": 20,
@@ -195,30 +196,21 @@
                     "State": "California",
                     "Zipcode": 91007,
                     "Phone": "(626) 265-8632",
-                    "Fax": "(626) 265-8633",
                     "Website": "http://www.nowebsiteezstop.com"
                   }],
-                  columns: ["CompanyName", "Address", "City", "State", "PhoneNumber", "Website"],
+                  columns: ["CompanyName", "Address", "City", "State", "Phone", "Website"],
                   showBorders: true,
-                  remoteOperations: true,
+                  showBorders: true,
                   scrolling: {
-                    mode: 'virtual'
+                    mode: 'infinite',
                   },
                   searchPanel: {
-                    visible: true,
+                   visible: true,
                     width: 240,
                     placeholder: "Search"
                   },
                 });
-              let scrollView = $("<div id='scrollView'></div>");
-              let title = $("<div id='title'>User Roster</div>");
-              title.appendTo(container);
-              scrollView.appendTo(_roster);
-              scrollView.dxScrollView({
-                height: '100%',
-                width: '100%',
-              });
-              container.append(scrollView);
+           container.append(scrollView);
             }
 
           }).dxPopup('instance');
@@ -226,9 +218,7 @@
 
       }).dxSpeedDialAction('instance');
     
-
-
-    //add New User Form
+//add New User Form
     $(() => {
       $('#form').dxSpeedDialAction({
         label: 'New User Form',
@@ -244,8 +234,6 @@
               e.element.remove();
               DevExpress.ui.notify({ type: 'success', message: 'closed dxForm' });
             },
-
-
             contentTemplate: (container) => {
               _form = $(`<div id='formBox'>`).appendTo(container).dxForm({
                 formData: {
@@ -264,9 +252,12 @@
 
                   .dxSpeedDialAction('instance'),
               );
+
+              //Floating action button
               $('#direction').dxSelectBox({
                 dataSource: ['auto', 'up', 'down'],
                 value: 'auto',
+
                 onSelectionChanged(e) {
                   DevExpress.config({
                     floatingActionButtonConfig: directions[e.selectedItem],
