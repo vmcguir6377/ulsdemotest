@@ -6,7 +6,7 @@ $(() => {
         index: 1,
         onClick: () => {
             _popup = $("<div>").appendTo("body").dxPopup({
-                title: "myTitle",
+                title: "User Roster",
                 "visible": true,
               
               onContentReady(e) {
