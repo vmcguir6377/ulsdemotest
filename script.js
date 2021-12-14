@@ -214,7 +214,21 @@ $(() => {
                                 placeholder: "Search"
                             },
                         });
-                    
+                         // define scrollview variable as jQuery selector
+                    let scrollView = $("<div id='scrollView'></div>");
+                    let title = $("<div id='title'>Users</div>");
+                    //append scrollView to _data variable (append as child to div created in _data)
+                    title.appendTo(container);
+                    scrollView.append(_data);
+                    // add instance of dxScrollView to scrollview div
+                    scrollView.dxScrollView({
+                        height: '100%',
+                        width: '100%'
+                     
+                    });
+
+                    //append scrollView to container
+                    container.append(scrollView);
                 }
 
             }).dxPopup('instance');
